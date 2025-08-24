@@ -44,14 +44,14 @@ Con esto ya tienes el proyecto instalado y levantado para usar y probar todo lo 
 
 ## Rutas Hacía los Endpoints
 
-/data
-║
-╠→ /clients  - Extraer los top 10 clientes
-╠→/products - Extraer los top 20 productos
-╠→ /charts - Extraer información de los gráficos
-╠→ /filters - Extraer información de los filtros existentes
-╠→ /sales - Información relevante sobre el total de ventas y venta segmentadas
-╠→ /count - Trae información sobre las categorias y la cantidad de compras
+/data <br>
+║ <br>
+╠→ /clients  - Extraer los top 10 clientes <br>
+╠→/products - Extraer los top 20 productos <br>
+╠→ /charts - Extraer información de los gráficos <br> 
+╠→ /filters - Extraer información de los filtros existentes <br>
+╠→ /sales - Información relevante sobre el total de ventas y venta segmentadas <br>
+╠→ /count - Trae información sobre las categorias y la cantidad de compras <br>
 
 ## Notas a Tener en Cuenta
 
@@ -64,6 +64,10 @@ En caso de quererse modificar bastaría con cambiar un poco la sentencia SQL per
 Considero que esté proyecto fue interesante ya que me ayudó a comprender y establecer mejores mis conceptos sobre el lado Frontend y Backend, así mismo aprendí a usar DJango el cuál no tenía experiencia previa (He desarrollado APIs con FastAPI y Flask, con lo cuál tenía los conceptos básicos más no la sintaxis del mismo el cual tuve que ir revisando poco a poco).
 
 Este proyecto fue hecho para una prueba técnica en un plazo máximo de 3 días, por lo cual no cuenta con todas los detalles que quisiera haberle colocado, como siguientes pasos que haría para mejorar este proyecto estaría la posibilidad de mejorar el UI/UX de la web, también organizar un poco más el código haciendo sus funciones de manera separa y no un poco monolítica como se encuentra en el proyecto y también crearía relaciones en la BD para funciones adicionales.
+
+## Video Demo
+
+[Aquí](https://youtu.be/tspY80FW8rU) encontrarás el video demo para desmotrar las funciones básicas de la aplicación WEB cumpliendo con los requerimientos previamente mencionados.
 
 ## Imagenes de la Aplicación WEB
 ![](https://i.imgur.com/Y4aNWNm.png)
