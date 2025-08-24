@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style/style.css">
+    <link rel="icon" href="./public/dashboard.png">
+    <title>DashBoard</title>
+  </head>
+  <body>
+    <nav class="fixed w-full flex justify-center items-center p-8 bg-white backdrop-blur-lg bg-white/30">
+      <a href="/" class="text-3xl font-bold flex gap-3 items-center justify-center "><img src="./public/dashboard.png" alt="logo.png" class="w-10">Dashboard</a>
+    </nav>
+    <main class="pt-34 w-full h-screen bg-red-80 flex flex-col items-center gap-4">
+      <div class="md:grid md:grid-cols-5 px-20 gap-2 w-full h-full" id="filters_main">
+        <div class="col-span-1 h-screen hidden md:flex" id="extra_column"></div>
+
+        <div class="w-full gap-2 mb-6 md:w-1/6 static md:fixed flex flex-col gap-4" id="filters_section">
+          <div class="border-2 border-gray-400 rounded-lg p-2 bg-white flex flex-col gap-6 items-center">
+            <h2 class="font-sans text-2xl">Filtros</h2>
+            <div class="flex flex-col gap-4 w-full p-2">
+              <div class="p-1 border-1 border-gray-300 flex flex-col rounded-lg font-sans w-full">
+                <label for="start">Fecha inicio:</label>
+                <input type="date" id="fechaIni" name="start">
+
+                <label for="end">Fecha fin:</label>
+                <input type="date" id="fechaFin" name="end">
+              </div>
+
+              <select class="font-sans p-1 border-1 border-gray-300 rounded-lg" name="Categorias" id="category"> <option value="All">Categorias</option> </select>
+              <select class="font-sans p-1 border-1 border-gray-300 rounded-lg" name="Sub-Categorias" id="sub_category"> <option value="All">Sub-Categorias</option> </select>
+              <select class="font-sans p-1 border-1 border-gray-300 rounded-lg" name="Estado" id="state"> <option value="All">Estados</option> </select>
+              <select class="font-sans p-1 border-1 border-gray-300 rounded-lg" name="Ciudad" id="city"> <option value="All">Ciudades</option> </select>
+            </div>
+          </div>
+
+          <div id="ventas-btn" class="border-2 border-gray-400 rounded-lg p-4 bg-white flex flex-col gap-6 items-center hover:bg-gray-100 cursor-pointer">
+            <h2 class="font-sans text-2xl">Ventas</h2>
+          </div>
+        </div>
+        
+        <div class="col-span-4 border-2 border-gray-400 rounded-lg p-6 flex flex-col justify-center items-center gap-10">
+          <div class="mt-4">
+            <h1 class="text-black text-4xl md:text-5xl font-sans font-light">Centro de mando</h1>
+          </div>
+          
+          <div class="w-full flex flex-col md:flex-row">
+            <div class="w-full md:w-2/3 h-68 md:h-110">
+              <canvas class="bg-white p-2 border-1 border-gray-400 rounded-lg" id="salesChart"></canvas>
+            </div>
+            <div class="flex w-full md:w-1/3 h-110 items-center justify-center md:items-start">
+              <canvas class="bg-white p-2 border-1 border-gray-400 rounded-lg" id="countChart"></canvas>
+            </div>
+          </div>
+          
+          <table class="w-full table-auto bg-white border-separate border-spacing-2 border-1 rounded-lg">
+            <thead>
+              <tr class="">
+                <th>Name</th>
+                <th>Segment</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Sales</th>
+              </tr>
+            </thead>
+            <tbody id="clients_table">
+
+            </tbody>
+          </table>
+
+          <table class="w-full table-auto  border-separate border-spacing-2 border-1 rounded-lg bg-white">
+            <thead>
+              <tr>
+                <th>Product_ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Subcategory</th>
+                <th>Total Sales</th>
+              </tr>
+            </thead>
+            <tbody id="products_table">
+              
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </main>
+    <div id="modal" class="fixed inset-0 bg-black/30 hidden items-center justify-center z-50">
+      <div class="bg-white rounded-2xl shadow-lg p-6 w-2/3 md:w-1/3">
+        <h2 class="text-xl font-bold mb-4">Información Sobre las Ventas</h2>
+        <p class="mb-4 font-sans text-2xl font-bold">Ventas Totales: <span class="font-normal" id="total"></span></p>
+        <canvas class="bg-white p-2 border-1 border-gray-400 rounded-lg mb-4" id="salesSegmentChart"></canvas>
+        <div class="flex justify-end space-x-2">
+          <button id="closeModal" class="px-4 py-2 bg-red-700 text-white rounded-lg cursor-pointer">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="script.js"></script>
+<script type="module" src="/script.js"></script>
